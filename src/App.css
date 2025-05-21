@@ -1,1 +1,10 @@
 @import "tailwindcss";
+@import "@fontsource/poppins"; /* Defaults to weight 400 */
+
+
+* {
+   
+  box-sizing: border-box;
+  font-family: poppins, sans-serif;
+}
+
