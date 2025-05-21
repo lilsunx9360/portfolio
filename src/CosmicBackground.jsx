@@ -39,8 +39,8 @@ const CosmicBackground = ({ children }) => {
                     position: 'fixed',
                     top: 0,
                     left: 0,
-                    width: '100vw',
-                    height: '100vh',
+                    width: '50vw',
+                    height: '500vh',
                     zIndex: -1
                 }}
             />
