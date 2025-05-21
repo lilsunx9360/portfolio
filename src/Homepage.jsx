@@ -50,7 +50,7 @@ const Home = () => {
             MERN Stack Developer
           </h2>
 
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 p-0.5 max-w-xl">
+          <p className="text-sm  sm:text-base md:text-lg lg:text-xl  text-gray-300   max-w-xl ">
             A MERN Stack Developer creates full-stack web applications using MongoDB, Express.js, React, and Node.js,
           </p>
 
