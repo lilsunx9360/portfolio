@@ -64,24 +64,7 @@ const Home = () => {
             </button>
           </div>
 
-          {/* Social Icons */}
-          <ul className="flex space-x-4 pt-4 p-0.5">
-            <li>
-              <a href="#">
-                <i className="fab fa-facebook-f text-cyan-400 text-lg sm:text-xl md:text-2xl"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fab fa-twitter text-cyan-400 text-lg sm:text-xl md:text-2xl"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fab fa-linkedin-in text-cyan-400 text-lg sm:text-xl md:text-2xl"></i>
-              </a>
-            </li>
-          </ul>
+    
         </div>
       </div>
     </section>
