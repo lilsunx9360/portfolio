@@ -5,7 +5,7 @@ import Footer from './Footer';
 const Contact = () => {
   return (
     <>
-      <section className="relative min-h-screen bg-gradient-to-tr from-black via-black to-neutral-800 text-white overflow-hidden px-4 py-10 flex flex-col md:flex-row gap-6">
+      <section className="relative min-h-screen bg-gradient-to-tr from-black via-black to-neutral-800 text-white overflow-hidden px-4 py-10 flex flex-col md:flex-row gap-6" id='Contact'>
         
         {/* Small Devices - CONTACT on top horizontally */}
         <div className="block md:hidden text-center mb-6">

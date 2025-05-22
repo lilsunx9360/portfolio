@@ -25,22 +25,59 @@ const ShanmugamBackground = () => {
         {/* Four Grid Boxes */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6  md:p-8 p-3 md:mb-8">
       
-          <div className="border-2 border-cyan-500 p-6 rounded-md text-center">
-            <h3 className="text-lg font-semibold">Frontend</h3>
-            <p className="text-sm text-gray-400">React, HTML, CSS, JavaScript</p>
-          </div>
-          <div className="border-2 border-pink-500 p-6 rounded-md text-center">
-            <h3 className="text-lg font-semibold">Backend</h3>
-            <p className="text-sm text-gray-400">Node.js, Express.js, REST APIs</p>
-          </div>
-          <div className="border-2 border-yellow-500 p-6 rounded-md text-center">
-            <h3 className="text-lg font-semibold">Database</h3>
-            <p className="text-sm text-gray-400">MongoDB, Mongoose</p>
-          </div>
-          <div className="border-2 border-green-500 p-6 rounded-md text-center">
-            <h3 className="text-lg font-semibold">Collaboration</h3>
-            <p className="text-sm text-gray-400">Git, GitHub, Agile</p>
-          </div>
+          <div
+  className="p-[2px] rounded-md text-center"
+  style={{
+    backgroundImage: 'linear-gradient(to right, #00FFFB, #C800FF)',
+  }}
+>
+  <div className="bg-neutral-900 p-6 rounded-md">
+    <h3 className="text-lg font-semibold">Frontend</h3>
+    <p className="text-sm text-gray-400">React, HTML, CSS, JavaScript</p>
+  </div>
+</div>
+
+
+
+        {/* Backend */}
+<div
+  className="p-[2px] rounded-md text-center"
+  style={{
+    backgroundImage: 'linear-gradient(to right, #00FFFB, #C800FF)',
+  }}
+>
+  <div className="bg-neutral-900 p-6 rounded-md">
+    <h3 className="text-lg font-semibold">Backend</h3>
+    <p className="text-sm text-gray-400">Node.js, Express.js, REST APIs</p>
+  </div>
+</div>
+
+{/* Database */}
+<div
+  className="p-[2px] rounded-md text-center"
+  style={{
+    backgroundImage: 'linear-gradient(to right, #00FFFB, #C800FF)',
+  }}
+>
+  <div className="bg-neutral-900 p-6 rounded-md">
+    <h3 className="text-lg font-semibold">Database</h3>
+    <p className="text-sm text-gray-400">MongoDB, Mongoose</p>
+  </div>
+</div>
+
+{/* Collaboration */}
+<div
+  className="p-[2px] rounded-md text-center"
+  style={{
+    backgroundImage: 'linear-gradient(to right, #00FFFB, #C800FF)',
+  }}
+>
+  <div className="bg-neutral-900 p-6 rounded-md">
+    <h3 className="text-lg font-semibold">Collaboration</h3>
+    <p className="text-sm text-gray-400">Git, GitHub, Agile</p>
+  </div>
+</div>
+
         </div>
       </div>
     </div>
