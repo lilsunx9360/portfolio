@@ -1,0 +1,73 @@
+// src/components/Contact.jsx
+import React from 'react';
+import Footer from './Footer';
+
+const Contact = () => {
+  return (
+    <>
+      <section className="relative min-h-screen bg-gradient-to-tr from-black via-black to-neutral-800 text-white overflow-hidden px-4 py-10 flex flex-col md:flex-row gap-6">
+        
+        {/* Small Devices - CONTACT on top horizontally */}
+        <div className="block md:hidden text-center mb-6">
+          <h1 className="text-[3rem] sm:text-[4rem] font-bold uppercase opacity-25 select-none pointer-events-none" style={{ fontFamily: "'Inter', sans-serif" }}>
+            CONTACT
+          </h1>
+        </div>
+
+        {/* Left Side - Contact Form */}
+        <div className="flex-1 flex justify-center items-center">
+          <form className="w-full max-w-3xl  rounded-2xl shadow-lg p-6 space-y-6">
+            <div>
+              <label className="block text-sm font-medium text-white mb-2">Name</label>
+              <input
+                type="text"
+                placeholder="Enter your name"
+                className="w-full p-3 rounded-xl bg-neutral-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-white mb-2">Email</label>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full p-3 rounded-xl bg-neutral-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-white mb-2">Message</label>
+              <textarea
+                rows="5"
+                placeholder="Your message"
+                className="w-full p-3 rounded-xl bg-neutral-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-blue-600 hover:bg-blue-700 transition-all text-white py-3 rounded-xl font-semibold"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        {/* Right Side - Vertical 'CONTACT' for md+ screens only */}
+        <div className="hidden md:flex md:w-20 w-auto flex-col justify-center items-center md:items-start gap-0 leading-none">
+          {'CONTACT'.split('').map((char, i) => (
+            <span
+              key={i}
+              className="text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] font-bold uppercase opacity-25 select-none pointer-events-none leading-none"
+              style={{ fontFamily: "'Inter', sans-serif" }}
+            >
+              {char}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer Section */}
+      <Footer />
+    </>
+  );
+};
+
+export default Contact;
