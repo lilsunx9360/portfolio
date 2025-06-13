@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import img from './assets/img-1.jpg';
-import ParticleBackground from './ParticleBackground';
+
 import './App.css';
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-black via-neutral-950 to-neutral-800 text-white px-5 flex items-center justify-center overflow-x-hidden">
-      <ParticleBackground />
+    
       <div className="max-w-6xl w-full mx-auto flex flex-col md:flex-row gap-10 items-center md:items-stretch justify-center text-center md:text-left mb-24">
         <div className="relative flex items-center justify-center order-2 md:order-2">
           <div className="absolute inset-0 flex items-center justify-center z-0">

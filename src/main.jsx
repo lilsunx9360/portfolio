@@ -5,13 +5,12 @@ import Home from './Homepage.jsx'
 import ShanmugamBackground from './about.jsx'
 import Project from './project.jsx'
 import Contact from './contact.jsx'
-import ParticleBackground from './ParticleBackground.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
     <Home />
     <ShanmugamBackground />
-      <ParticleBackground />
+     
     <Project />
     <Contact />
 
