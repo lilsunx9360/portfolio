@@ -24,16 +24,6 @@
   animation: slide-in 0.7s ease-out forwards;
 }
 
-
-/* src/App.css */
-@import "tailwindcss";
-@import "@fontsource/poppins";
-
-* {
-  box-sizing: border-box;
-  font-family: Poppins, sans-serif;
-}
-
 #tsparticles {
   position: absolute;
   width: 100%;
@@ -46,21 +36,6 @@
 section {
   position: relative;
   z-index: 10;
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.animate-slide-in {
-  animation: slide-in 0.7s ease-out forwards;
 }
 
 .text-gradient {
@@ -78,9 +53,6 @@ section {
 }
 
 @keyframes blink {
-  0% { border-color: #C800FF; }
-  49% { border-color: #C800FF; }
-  50% { border-color: transparent; }
-  99% { border-color: transparent; }
-  100% { border-color: #C800FF; }
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #C800FF; }
 }
