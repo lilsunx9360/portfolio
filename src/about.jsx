@@ -1,13 +1,5 @@
-// src/components/ShanmugamBackground.jsx
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-
-const skills = [
-  { title: 'Frontend', technologies: ['HTML', 'CSS', 'JavaScript', 'React'], percentage: 80 },
-  { title: 'Backend', technologies: ['Node.js', 'Express.js'], percentage: 70 },
-  { title: 'Database', technologies: ['MongoDB', 'Firebase'], percentage: 70 },
-  { title: 'Collaboration', technologies: ['Git', 'GitHub', 'Agile'], percentage: 70 },
-];
 
 const experiences = [
   {
@@ -52,55 +44,187 @@ const experiences = [
   },
 ];
 
-const SkillCircle = ({ title, technologies, percentage }) => {
-  const [inView, setInView] = useState(false);
-  const ref = useRef(null);
-  const radius = 80;
-  const stroke = 8;
-  const normalizedRadius = radius - stroke / 2;
-  const circumference = 2 * Math.PI * normalizedRadius;
-  const offset = inView ? circumference - (percentage / 100) * circumference : circumference;
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && setInView(true),
-      { threshold: 0.3 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
+const Cube = () => {
   return (
-    <div ref={ref} className="flex flex-col items-center">
-      <svg height={radius * 2} width={radius * 2} className="mb-4">
-        <defs>
-          <linearGradient id={`gradient-${title}`} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#00FFFB" />
-            <stop offset="100%" stopColor="#C800FF" />
-          </linearGradient>
-        </defs>
-        <circle stroke="#2d2d2d" fill="transparent" strokeWidth={stroke} r={normalizedRadius} cx={radius} cy={radius} />
-        <circle
-          stroke={`url(#gradient-${title})`}
-          fill="transparent"
-          strokeWidth={stroke}
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
-          strokeLinecap="round"
-          r={normalizedRadius}
-          cx={radius}
-          cy={radius}
-          style={{ transition: 'stroke-dashoffset 1.5s ease-in-out' }}
-        />
-        <text x="50%" y="45%" textAnchor="middle" fontSize="14" fontWeight="bold" fill="white">
-          {title}
-        </text>
-        <foreignObject x="20" y="50%" width="120" height="60">
-          <div className="text-[10px] text-center text-white">
-            {technologies.map((tech, idx) => <div key={idx}>{tech}</div>)}
+    <div className="relative flex justify-center">
+      <style>
+        {`
+          .cube-container {
+            width: 120px; /* Base size for mobile */
+            height: 120px;
+            position: relative;
+            top:40px;
+            left: -1%;
+            transform-style: preserve-3d;
+            animation: rotate 10s infinite ease-in-out;
+            margin-bottom: 20px; /* Space for the glow effect */
+          }
+
+          /* Responsive sizes for larger screens */
+          @media (min-width: 640px) {
+            .cube-container {
+              width: 160px; /* Small screens */
+              height: 160px;
+            }
+          }
+
+          @media (min-width: 768px) {
+            .cube-container {
+              width: 180px; /* Medium screens */
+              height: 180px;
+            }
+          }
+
+          @media (min-width: 1024px) {
+            .cube-container {
+              width: 200px; /* Large screens */
+              height: 200px;
+            }
+          }
+
+          .cube-container::after {
+            content: '';
+            position: absolute;
+            bottom: -90px; /* Base position for mobile */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px; /* Base size for mobile */
+            height: 30px;
+            background: radial-gradient(circle, rgba(128, 0, 128, 0.5) 0%, rgba(0, 128, 0, 0.5) 50%, transparent 100%);
+            filter: blur(20px);
+            z-index: -1;
+          }
+
+          /* Responsive glow effect */
+          @media (min-width: 640px) {
+            .cube-container::after {
+              bottom: -40px;
+              width: 120px;
+              height: 40px;
+             
+            }
+          }
+
+          @media (min-width: 768px) {
+            .cube-container::after {
+              bottom: -45px;
+              width: 135px;
+              height: 45px;
+            
+            }
+          }
+
+          @media (min-width: 1024px) {
+            .cube-container::after {
+              bottom: -50px;
+              width: 150px;
+              height: 50px;
+            }
+          }
+
+          .cube {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+          }
+
+          .cube-face {
+            position: absolute;
+            width: 120px; /* Base size for mobile: 120px - 2*30px border */
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 50, 0.8) 100%);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+          }
+
+          /* Responsive face sizes */
+          @media (min-width: 640px) {
+            .cube-face {
+              width: 200px; /* 160px - 2*30px */
+              height: 200px;
+            }
+          }
+
+          @media (min-width: 768px) {
+            .cube-face {
+              width: 200px; /* 180px - 2*30px */
+              height: 200px;
+            }
+          }
+
+          @media (min-width: 1024px) {
+            .cube-face {
+              width: 200px; /* 200px - 2*30px */
+              height: 200px;
+            }
+          }
+
+          .front  { transform: translateZ(60px); } /* Base transform for mobile */
+          .back   { transform: translateZ(-60px) rotateY(180deg); }
+          .right  { transform: translateX(60px) rotateY(90deg); }
+          .left   { transform: translateX(-60px) rotateY(-90deg); }
+          .top    { transform: translateY(-60px) rotateX(90deg); }
+          .bottom { transform: translateY(60px) rotateX(-90deg); }
+
+          /* Responsive transforms */
+          @media (min-width: 640px) {
+            .front  { transform: translateZ(80px); }
+            .back   { transform: translateZ(-80px) rotateY(180deg); }
+            .right  { transform: translateX(80px) rotateY(90deg); }
+            .left   { transform: translateX(-80px) rotateY(-90deg); }
+            .top    { transform: translateY(-80px) rotateX(90deg); }
+            .bottom { transform: translateY(80px) rotateX(-90deg); }
+          }
+
+          @media (min-width: 768px) {
+            .front  { transform: translateZ(90px); }
+            .back   { transform: translateZ(-90px) rotateY(180deg); }
+            .right  { transform: translateX(90px) rotateY(90deg); }
+            .left   { transform: translateX(-90px) rotateY(-90deg); }
+            .top    { transform: translateY(-90px) rotateX(90deg); }
+            .bottom { transform: translateY(90px) rotateX(-90deg); }
+          }
+
+          @media (min-width: 1024px) {
+            .front  { transform: translateZ(100px); }
+            .back   { transform: translateZ(-100px) rotateY(180deg); }
+            .right  { transform: translateX(100px) rotateY(90deg); }
+            .left   { transform: translateX(-100px) rotateY(-90deg); }
+            .top    { transform: translateY(-100px) rotateX(90deg); }
+            .bottom { transform: translateY(100px) rotateX(-90deg); }
+          }
+
+          @keyframes rotate {
+            from { transform: rotateX(0deg) rotateY(0deg); }
+            to { transform: rotateX(360deg) rotateY(360deg); }
+          }
+        `}
+      </style>
+      <div className="cube-container">
+        <div className="cube">
+          <div className="cube-face front p-[15px] sm:p-[20px] md:p-[25px] lg:p-[30px] m-[15px] sm:m-[20px] md:m-[25px] lg:m-[30px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-black">
+            <img src="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png" alt="HTML Logo" className="w-full h-full" />
           </div>
-        </foreignObject>
-      </svg>
+          <div className="cube-face back p-[15px] sm:p-[20px] md:p-[25px] lg:p-[30px] m-[15px] sm:m-[20px] md:m-[25px] lg:m-[30px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-black">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png" alt="CSS Logo" className="w-full h-full" />
+          </div>
+          <div className="cube-face right p-[15px] sm:p-[20px] md:p-[25px] lg:p-[30px] m-[15px] sm:m-[20px] md:m-[25px] lg:m-[30px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-black">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" alt="React Logo" className="w-full h-full" />
+          </div>
+          <div className="cube-face left p-[15px] sm:p-[20px] md:p-[25px] lg:p-[30px] m-[15px] sm:m-[20px] md:m-[25px] lg:m-[30px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-black">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png" alt="JavaScript Logo" className="w-full h-full" />
+          </div>
+          <div className="cube-face top p-[15px] sm:p-[20px] md:p-[25px] lg:p-[30px] m-[15px] sm:m-[20px] md:m-[25px] lg:m-[30px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-black">
+            <img src="https://www.mongodb.com/assets/images/global/leaf.png" alt="MongoDB Logo" className="w-full h-full" />
+          </div>
+          <div className="cube-face bottom p-[15px] sm:p-[20px] md:p-[25px] lg:p-[30px] m-[15px] sm:m-[20px] md:m-[25px] lg:m-[30px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-black">
+            <img src="https://git-scm.com/images/logos/logomark-orange@2x.png" alt="Git Logo" className="w-full h-full" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
@@ -111,7 +235,7 @@ const fadeInUp = {
 };
 
 const ExperienceTimeline = () => (
-  <div className="relative mt-16 px-4">
+  <div className="relative mt-36 px-4 ">
     <h1 className="text-4xl mb-10 text-center">Work Experience</h1>
     <div className="relative max-w-5xl mx-auto before:content-[''] before:absolute before:top-0 before:left-1/2 before:transform before:-translate-x-1/2 before:h-full before:w-1 before:bg-white">
       {experiences.map((exp, index) => {
@@ -157,8 +281,8 @@ const ShanmugamBackground = () => {
           I'm a skilled software developer with experience in JavaScript, and expertise in frameworks like React, Node.js, Express.js and MongoDB. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!
         </p>
         <h1 className="text-4xl pl-3 md:pl-9">Skills</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:p-8 p-3 md:mb-8">
-          {skills.map((skill) => <SkillCircle key={skill.title} {...skill} />)}
+        <div className="flex justify-center md:p-8 p-3 md:mb-8">
+          <Cube />
         </div>
         <ExperienceTimeline />
       </div>
