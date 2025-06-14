@@ -29,7 +29,7 @@ const Home = () => {
           <img
             src={img}
             alt="Illustration"
-            className="relative z-10 w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl object-cover mb-6 md:mb-0 shadow-lg border-3 border-gray-800"
+            className="relative z-10 w-55 h-55 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl object-cover  center mb-6 md:mb-0 shadow-lg border-3 border-gray-800"
             style={{ background: 'linear-gradient(135deg, #1e3a8a, #3b82f6)' }}
           />
         </div>
