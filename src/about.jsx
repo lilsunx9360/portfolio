@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
 const experiences = [
   {
     title: 'Machine Learning Intern',
@@ -203,8 +202,10 @@ const Cube = () => {
           }
         `}
       </style>
+         
       <div className="cube-container">
         <div className="cube">
+         
           <div className="cube-face front p-[15px] sm:p-[20px] md:p-[25px] lg:p-[30px] m-[15px] sm:m-[20px] md:m-[25px] lg:m-[30px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-black">
             <img src="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png" alt="HTML Logo" className="w-full h-full" />
           </div>
@@ -223,10 +224,16 @@ const Cube = () => {
           <div className="cube-face bottom p-[15px] sm:p-[20px] md:p-[25px] lg:p-[30px] m-[15px] sm:m-[20px] md:m-[25px] lg:m-[30px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-black">
             <img src="https://git-scm.com/images/logos/logomark-orange@2x.png" alt="Git Logo" className="w-full h-full" />
           </div>
+         
         </div>
+         
       </div>
+      
     </div>
+      
+
   );
+  
 };
 
 const fadeInUp = {
@@ -266,15 +273,19 @@ const ExperienceTimeline = () => (
       })}
     </div>
   </div>
+  
 );
 
 const ShanmugamBackground = () => {
   return (
+  
     <div className="relative min-h-screen bg-black text-white overflow-hidden px-4 pt-10 pb-20">
       <div className="absolute inset-0 flex items-start justify-center pt-10">
+      
         <h1 className="text-[4rem] sm:text-[6rem] md:text-[7rem] lg:text-[8rem] font-bold uppercase opacity-25 select-none pointer-events-none" style={{ fontFamily: "'Inter', sans-serif" }}>
           ABOUT
         </h1>
+   
       </div>
       <div className="relative z-10 max-w-5xl mx-auto mt-24 md:mt-40">
         <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 md:p-10 p-3 md:mb-8">
@@ -287,7 +298,9 @@ const ShanmugamBackground = () => {
         <ExperienceTimeline />
       </div>
     </div>
+         
   );
 };
+
 
 export default ShanmugamBackground;

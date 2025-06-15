@@ -2,13 +2,16 @@
 import React, { useState } from 'react';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import img from './assets/img-1.jpg';
-
+import { ParallaxProvider } from 'react-scroll-parallax';
+import { Parallax } from 'react-scroll-parallax';
 import './App.css';
 
 const Home = () => {
   const [showIcons, setShowIcons] = useState(false);
 
   return (
+     <ParallaxProvider>
+              <Parallax speed={-200}>
     <section className="relative min-h-screen bg-gradient-to-br from-black via-neutral-950 to-neutral-800 text-white px-5 flex items-center justify-center overflow-hidden">
       <div className="max-w-6xl w-full mx-auto flex flex-col md:flex-row gap-10 items-center md:items-stretch justify-center text-center md:text-left mb-24">
         {/* Profile Image + Triangles */}
@@ -29,15 +32,15 @@ const Home = () => {
           <img
             src={img}
             alt="Illustration"
-            className="relative z-10 w-55 h-55 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl object-cover  center mb-6 md:mb-0 shadow-lg border-3 border-gray-800"
+            className="relative z-10 w-55 h-55 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl object-cover mb-6 md:mb-0 shadow-lg border-3 border-gray-800"
             style={{ background: 'linear-gradient(135deg, #1e3a8a, #3b82f6)' }}
           />
         </div>
 
         {/* Text Content */}
-        <div className="flex flex-col justify-center items-center md:items-start order-1 md:order-2 space-y-2">
+        <div className="flex flex-col justify-center items-center md:items-start order-1 md:order-2 space-y-0">
           <h1
-            className="text-[2rem] sm:text-[3rem] md:text-[5rem] lg:text-[5rem] font-bold uppercase opacity- select-none pointer-events-none relative"
+            className="text-[2rem] sm:text-[3rem] md:text-[5rem] lg:text-[5rem] font-bold uppercase mb-4 select-none pointer-events-none relative"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             <span>i'am</span>{' '}
@@ -53,13 +56,16 @@ const Home = () => {
               SHANMUGAM
             </span>
           </h1>
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl p-0.5">
+
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-2">
             MERN Stack Developer
           </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-xl">
+
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-xl mb-4">
             A MERN Stack Developer creates full-stack web applications using MongoDB, Express.js, React, and Node.js,
           </p>
-          <div className="flex gap-4 flex-wrap p-0.5">
+
+          <div className="flex gap-4 flex-wrap mt-4">
             <a href="#Contact">
               <button
                 className="text-white text-sm sm:text-base px-6 py-2.5 rounded-md transition-all duration-300 cursor-pointer"
@@ -113,6 +119,8 @@ const Home = () => {
         </div>
       )}
     </section>
+    </Parallax>
+    </ParallaxProvider>
   );
 };
 
