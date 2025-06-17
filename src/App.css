@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@fontsource/poppins"; /* Defaults to weight 400 */
+@import 'locomotive-scroll/dist/locomotive-scroll.css';
 
 
 * {
@@ -8,6 +9,9 @@
   font-family: poppins, sans-serif;
 }
 
+[data-scroll-container] {
+  overflow: hidden;
+}
 
 @keyframes slide-in {
   from {
