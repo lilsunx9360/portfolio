@@ -53,6 +53,7 @@ const Cube = () => {
             height: 120px;
             position: relative;
             top:40px;
+          
             left: -1%;
             transform-style: preserve-3d;
             animation: rotate 10s infinite ease-in-out;
@@ -92,6 +93,7 @@ const Cube = () => {
             background: radial-gradient(circle, rgba(128, 0, 128, 0.5) 0%, rgba(0, 128, 0, 0.5) 50%, transparent 100%);
             filter: blur(20px);
             z-index: -1;
+            
           }
 
           /* Responsive glow effect */
@@ -100,8 +102,7 @@ const Cube = () => {
               bottom: -40px;
               width: 120px;
               height: 40px;
-             
-            }
+             }
           }
 
           @media (min-width: 768px) {
@@ -125,6 +126,7 @@ const Cube = () => {
             position: absolute;
             width: 100%;
             height: 100%;
+            
             transform-style: preserve-3d;
           }
 
@@ -133,10 +135,11 @@ const Cube = () => {
             width: 120px; /* Base size for mobile: 120px - 2*30px border */
             height: 120px;
             display: flex;
+            padding: 20px; /* Padding for the face */
+          
             justify-content: center;
             align-items: center;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 50, 0.8) 100%);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+         
           }
 
           /* Responsive face sizes */
@@ -206,22 +209,22 @@ const Cube = () => {
       <div className="cube-container">
         <div className="cube">
          
-          <div className="cube-face front p-[15px] sm:p-[20px] md:p-[25px] lg:p-[30px] m-[15px] sm:m-[20px] md:m-[25px] lg:m-[30px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-black">
+          <div className="cube-face front p-[5px] m-[20px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-transparent">
             <img src="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png" alt="HTML Logo" className="w-full h-full" />
           </div>
-          <div className="cube-face back p-[15px] sm:p-[20px] md:p-[25px] lg:p-[30px] m-[15px] sm:m-[20px] md:m-[25px] lg:m-[30px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-black">
+          <div className="cube-face back p-[5px] m-[20px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-transparent">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png" alt="CSS Logo" className="w-full h-full" />
           </div>
-          <div className="cube-face right p-[15px] sm:p-[20px] md:p-[25px] lg:p-[30px] m-[15px] sm:m-[20px] md:m-[25px] lg:m-[30px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-black">
+          <div className="cube-face right p-[5px] m-[20px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-transparent">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" alt="React Logo" className="w-full h-full" />
           </div>
-          <div className="cube-face left p-[15px] sm:p-[20px] md:p-[25px] lg:p-[30px] m-[15px] sm:m-[20px] md:m-[25px] lg:m-[30px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-black">
+          <div className="cube-face left p-[5px] m-[20px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-transparent">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png" alt="JavaScript Logo" className="w-full h-full" />
           </div>
-          <div className="cube-face top p-[15px] sm:p-[20px] md:p-[25px] lg:p-[30px] m-[15px] sm:m-[20px] md:m-[25px] lg:m-[30px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-black">
+          <div className="cube-face top p-[5px] m-[20px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-transparent">
             <img src="https://www.mongodb.com/assets/images/global/leaf.png" alt="MongoDB Logo" className="w-full h-full" />
           </div>
-          <div className="cube-face bottom p-[15px] sm:p-[20px] md:p-[25px] lg:p-[30px] m-[15px] sm:m-[20px] md:m-[25px] lg:m-[30px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-black">
+          <div className="cube-face bottom p-[5px] m-[20px] border-[15px] sm:border-[20px] md:border-[25px] lg:border-[30px] border-transparent">
             <img src="https://git-scm.com/images/logos/logomark-orange@2x.png" alt="Git Logo" className="w-full h-full" />
           </div>
          
@@ -264,7 +267,7 @@ const ExperienceTimeline = () => (
               <h2 className="text-xl font-semibold mb-2">{exp.title}</h2>
               <p className="text-gray-400 text-sm mb-1">{exp.tech}</p>
               <p className="text-sm text-indigo-300 mb-3">{exp.date}</p>
-              <ul className="list-disc list-inside space-y-1 text-sm text-gray-300">
+              <ul className="list-disc list-inside space-y-1 text-sm">
                 {exp.points.map((point, idx) => <li key={idx}>{point}</li>)}
               </ul>
             </div>

@@ -28,35 +28,63 @@
   animation: slide-in 0.7s ease-out forwards;
 }
 
-#tsparticles {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 0;
+
+/* Animation for triangle 1 (top-left) */
+.animate-triangle-1 {
+  animation: moveTriangle1 2s ease-in-out forwards;
 }
 
-section {
-  position: relative;
-  z-index: 10;
+@keyframes moveTriangle1 {
+  0% {
+    transform: translate(-100px, -100px); /* Start far outside */
+    z-index: 20; /* Ensure it's above the image initially */
+  }
+  50% {
+    transform: translate(50px, 50px); /* Move inward to cover the image */
+    z-index: 20;
+  }
+  100% {
+    transform: translate(-24px, -24px); /* Move to final position */
+    z-index: 0; /* Move behind the image */
+  }
 }
 
-.text-gradient {
-  background: linear-gradient(to right, #00FFFB, #C800FF);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+/* Animation for triangle 2 (bottom-right) */
+.animate-triangle-2 {
+  animation: moveTriangle2 2s ease-in-out forwards;
 }
 
-.typewriter {
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid #C800FF;
-  animation: blink 0.7s infinite;
+@keyframes moveTriangle2 {
+  0% {
+    transform: translate(100px, 100px); /* Start far outside */
+    z-index: 20;
+  }
+  50% {
+    transform: translate(-50px, -50px); /* Move inward to cover the image */
+    z-index: 20;
+  }
+  100% {
+    transform: translate(24px, 24px); /* Move to final position */
+    z-index: 0;
+  }
 }
 
-@keyframes blink {
-  0%, 100% { border-color: transparent; }
-  50% { border-color: #C800FF; }
+/* Animation for triangle 3 (bottom-left) */
+.animate-triangle-3 {
+  animation: moveTriangle3 2s ease-in-out forwards;
+}
+
+@keyframes moveTriangle3 {
+  0% {
+    transform: translate(-80px, 80px) rotate(45deg); /* Start far outside */
+    z-index: 20;
+  }
+  50% {
+    transform: translate(40px, -40px) rotate(45deg); /* Move inward to cover the image */
+    z-index: 20;
+  }
+  100% {
+    transform: translate(-16px, 16px) rotate(45deg); /* Move to final position */
+    z-index: 0;
+  }
 }
